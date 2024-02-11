@@ -1,148 +1,62 @@
-@extends('layouts.master');
+@extends('layouts.mimin');
 @push('css')
     <link rel="stylesheet" href="{{ url('https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endpush
 @section('title')
     <title>Form Berita</title>
 @endsection
 
 @section('content')
-    <section id="page-title">    
-        <div class="container clearfix">
-            <h1>Form Berita</h1>
-        </div>
-    </section>
-    <section id="content">
-        <div class="content-wrap">
-            <div class="container clearfix">
-
-                <div class="row">
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    <div class="col-lg-6">
-                        <form class="row" action="{{ route('berita.store') }}" method="post"
-                              enctype="multipart/form-data">
-                            @csrf
-                            @method('POST')
-                            <div class="col-12 form-group">
-                                <label>Judul Berita:</label>
-                                <input type="text" name="judul" id="judul" class="form-control">
-                            </div>
-                            <div class="col-12 form-group">
-                                <label>Kategori:</label>
-                                <input type="text" name="kategori" id="kategori" class="form-control">
-                            </div>
-                            <div class="col-12 form-group">
-                                <label>Isi Berita:</label>
-                                <textarea class="summernote" name="isi"></textarea>
-                            </div>
-                            <div class="col-12 form-group">
-                                <label class="form-label">Upload Foto:</label>
-                                <input type="file" class="form-control" name="foto" id="foto"/>
-                            </div>
-                            <div class="col-12 form-group">
-                                <label>Editor:</label>
-                                <input type="text" name="editor" id="editor" class="form-control">
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Simpan</button>
-                            </div>
-                        </form>
+<section id="page-title">    
+    <div class="container clearfix">
+        <h1>Form Berita</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="bg-light rounded h-100 p-4">
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
                     </div>
-
-                </div>
-                <div class="row">
-                    <h3 class="text-center">Daftar Berita</h3>
-                    <div>
-                        <table class="table table-striped" id="myTable">
-                            <thead>
-                            <tr>
-                                <th>Judul</th>
-                                <th>Kategori</th>
-                                <th>Foto</th>
-                                <th>Aksi</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
+                @endif
+                {{-- <h6 class="mb-4">Basic Form</h6> --}}
+                <form action="{{ route('berita.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('POST')
+                    <div class="mb-3 col-12 form-group">
+                        <label>Judul:</label>
+                        <input type="text" name="judul" id="judul" class="form-control" required>
                     </div>
-                </div>
+                    <div class="mb-3 col-12 form-group">
+                        <label>Kategori:</label>
+                        <input type="text" name="kategori" id="kategori" class="form-control" required>
+                    </div>
+                    <div class="mb-4">
+                        <label>Isi Berita:</label>
+                        <textarea class="summernote" name="isi" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Upload Foto:</label>
+                        <input class="form-control" type="file" name="foto" id="foto" required>
+                    </div>
+                    <div class="mb-3 col-12 form-group">
+                        <label>Editor:</label>
+                        <input type="text" name="editor" id="editor" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div> 
+</section>
 @endsection
 @push('js')
-    <script src="{{ url('https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
     <script>
          $(document).ready(function () {
-           var table = $('#myTable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ route('berita.data') }}",
-                columns: [{
-                    data: 'judul',
-                    name: 'judul'
-                },
-                    {
-                        data: 'kategori',
-                        name: 'kategori'
-                    },
-                    {
-                        data: 'foto',
-                        name: 'foto'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    },
-                ]
-            });
-            var del = function (id) {
-                Swal.fire({
-                    title: 'Apakah anda yakin?',
-                    text: "Data yang sudah terhapus tidak bisa dikembalikan lagi!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        $.ajax({
-                            url: "{{ url('berita/hapus') }}/" + id,
-                            method: "POST",
-                            success: function (response) {
-                                table.ajax.reload();
-                                Swal.fire(
-                                    'Terhapus!',
-                                    'File sudah dihapus',
-                                    'sukses'
-                                )
-                            },
-                            failure: function (response) {
-                                swal(
-                                    "Internal Error",
-                                    "Oops, your note was not saved.", // had a missing comma
-                                    "error"
-                                )
-                            }
-                        });
-                    }
-                })
-            };
-            $('body').on('click', '.hapus-data', function () {
-                del($(this).attr('data-id'));
-            });
             $('.summernote').summernote({
                 toolbar: [
                     // [groupName, [list of button]]
