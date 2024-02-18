@@ -5,7 +5,7 @@
 @section('content')
 <section id="page-title">
     <div class="container clearfix">
-        <h1>Berita SMKN 1 Situbondo</h1>
+        <h2>Berita SMKN 1 Situbondo</h2>
     </div>
 </section>
         <div class="container clearfix">
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-md-8 ps-md-4">
                                     <div class="entry-title title-sm">
-                                        <h2><a href="{{route('berita.show',$item->id)}}">{{ $item->judul }}</a></h2>
+                                        <h4><a href="{{route('berita.show',$item->id)}}">{{ $item->judul }}</a></h4>
                                     </div>
                                     <div class="entry-meta">
                                         <ul>

@@ -20,7 +20,7 @@
 @section('content')
 <section id="page-title">
     <div class="container clearfix">
-        <h1>Kompetensi Keahlian/Jurusan di SMKN 1 Situbondo</h1>
+        <h2>Kompetensi Keahlian/Jurusan di SMKN 1 Situbondo</h2>
     </div>
 </section>
         <div class="container clearfix">

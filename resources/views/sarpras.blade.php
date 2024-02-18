@@ -9,7 +9,7 @@
 @section('content')
 <section id="page-title">
     <div class="container clearfix">
-        <h1>Sarana Prasarana</h1>
+        <h2>Sarana Prasarana</h2>
     </div>
 </section>
     <div class="container mt-4">
@@ -17,7 +17,7 @@
             @foreach ($data as $item)
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 h-100 shadow-sm">
-                    <h3 class="card-header font-primary p-4 color1">{{ $item->nama_sarpras }}</h3>
+                    <h4 class="card-header font-primary p-4 color1">{{ $item->nama_sarpras }}</h4>
                     <div class="card-body p-4">
                         Sarana Prasarana
                         <ul class="ps-3 mt-4 mb-0">

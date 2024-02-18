@@ -16,7 +16,7 @@
 @section('content') 
     <section id="page-title">
         <div class="container clearfix">
-            <h1>Wakil Kepala SMKN 1 Situbondo</h1>
+            <h2>Wakil Kepala SMKN 1 Situbondo</h2>
         </div>
     </section>
 

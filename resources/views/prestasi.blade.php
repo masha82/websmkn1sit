@@ -8,7 +8,7 @@
 @section('content') 
     <section id="page-title">
         <div class="container clearfix">
-            <h1>Prestasi SMKN 1 Situbondo</h1>
+            <h2>Prestasi SMKN 1 Situbondo</h2>
         </div>
     </section>
     
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="col-md-8 ps-md-4">
                                     <div class="entry-title title-sm">
-                                        <h2><a href="{{route('achievement.show',$item->id)}}">{{ $item->nama_prestasi }}</a></h2>
+                                        <h4><a href="{{route('achievement.show',$item->id)}}">{{ $item->nama_prestasi }}</a></h4>
                                     </div>
                                     <div class="entry-meta">
                                         <ul>

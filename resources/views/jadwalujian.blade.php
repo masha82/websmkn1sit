@@ -9,7 +9,7 @@
 @section('content') 
     <section id="page-title">
         <div class="container clearfix">
-            <h1>Jadwal Ujian</h1>
+            <h2>Jadwal Ujian</h2>
         </div>
     </section>
             

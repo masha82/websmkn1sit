@@ -5,7 +5,7 @@
 @section('content')
     <section id="page-title">
         <div class="container clearfix">
-            <h1>Opini Tentang SMKN 1 Situbondo</h1>
+            <h2>Opini Tentang SMKN 1 Situbondo</h2>
         </div>
     </section>
     <section>
@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="col-md-10">
                     <div class="row flex-row-reverse g-2">
-                        <h3>Testimonials</h3>
+                        <h4>Testimonials</h4>
                         <div class="container">
                             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 align-items-stretch">
                                 @foreach ($data as $item)

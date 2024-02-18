@@ -22,9 +22,9 @@
                                 <div class="posts-md">
                                     <div class="entry">
                                         <div class="entry-title title-sm nott">
-                                            <h3 class="mb-0"><a
+                                            <h5 class="mb-0"><a
                                                     href="#">{{$video->keterangan}}</a>
-                                            </h3>
+                                            </h5>
                                         </div>
                                         <div class="entry-image img-fit">
                                             {!! $video->link !!}

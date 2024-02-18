@@ -44,7 +44,7 @@
 			<div class="auto-container">
 				<div class="d-flex justify-content-between align-items-center flex-wrap">
 					<div class="left-box">
-						<div class="text">Jl. Baluran No.17, Kotakan Utara, Kotakan, Kec. Situbondo, Kabupaten Situbondo, Jawa Timur 68313</div>
+						<div class="text"> SMKN 1 Situbondo - Jl. Baluran No.17, Kotakan Utara, Kotakan, Kec. Situbondo, Kabupaten Situbondo, Jawa Timur 68313</div>
 					</div>
 					<div class="right-box align-items-center d-flex">
 						
@@ -164,7 +164,30 @@
 							
 						</nav>
 						<!-- Main Menu End-->
-						
+
+						<div class="outer-box d-flex align-items-center">
+							<!-- Search Btn -->
+							{{-- <div class="search-box-btn search-box-outer"><span class="icon fa fa-search"></span></div>
+							
+							<!-- Nav Btn -->
+							<div class="nav-btn navSidebar-button fa fa-solid fa-cart-plus fa-fw">
+								<span>1</span>
+							</div> --}}
+							
+							{{-- <!-- Button Box -->
+							<div class="button-box style-two">
+								<a class="btn-style-one theme-btn btn-item" href="#">
+									<div class="btn-wrap">
+										<span class="text-one">contact me</span>
+										<span class="text-two">contact me</span>
+									</div>
+								</a>
+							</div> --}}
+							
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon fa-solid fa-bars fa-fw"></span></div>
+							
+						</div>
 					</div>
 					
 				</div>
@@ -188,12 +211,54 @@
 						</nav>
 						<!-- Main Menu End-->
 						
+						<div class="outer-box d-flex align-items-center">
+												
+							{{-- <!-- Nav Btn -->
+							<div class="nav-btn navSidebar-button fa fa-solid fa-cart-plus fa-fw">
+								<span>1</span>
+							</div>
+							
+							<!-- Button Box -->
+							<div class="button-box style-two">
+								<a class="btn-style-one theme-btn btn-item" href="#">
+									<div class="btn-wrap">
+										<span class="text-one">contact me</span>
+										<span class="text-two">contact me</span>
+									</div>
+								</a>
+							</div> --}}
+							
+							<!-- Mobile Navigation Toggler -->
+							<div class="mobile-nav-toggler"><span class="icon fa-solid fa-bars fa-fw"></span></div>
+							
+						</div>
+						
 					</div>
 					
 				</div>
             </div>
         </div>
 		<!-- End Sticky Menu -->
+		
+		<!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-020-x-mark"></span></div>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="{{ url('/') }}"><img src="{{ asset('assets/images/logosmkbisa.png') }}" alt="" title=""></a></div>
+				{{-- <!-- Search -->
+				<div class="search-box">
+					<form method="post" action="contact.html">
+						<div class="form-group">
+							<input type="search" name="search-field" value="" placeholder="SEARCH HERE" required>
+							<button type="submit"><span class="icon flaticon-001-loupe"></span></button>
+						</div>
+					</form>
+				</div> --}}
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            </nav>
+        </div>
+		<!-- End Mobile Menu -->
 	
     </header>
     <!-- End Main Header -->

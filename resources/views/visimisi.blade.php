@@ -5,7 +5,7 @@
 @section('content')
     <section id="page-title">
         <div class="container clearfix">
-            <h1>Visi dan Misi SMKN 1 Situbondo</h1>
+            <h2>Visi dan Misi SMKN 1 Situbondo</h2>
         </div>
     </section>
 <div class="content-wrap">
@@ -14,9 +14,9 @@
         <div class="row col-mb-50 mb-0">
             <div class="col-lg-8">
                 <div class="heading-block fancy-title border-bottom-0 title-bottom-border">
-                    <h1>Visi Sekolah</h1>
+                    <h3>Visi Sekolah</h3>
                 </div>
-                    <h3><p>{!! $visi->visi !!}</p></h3>
+                    <h4><p>{!! $visi->visi !!}</p></h4>
             </div>
         </div>
     </div>
@@ -25,9 +25,9 @@
         <div class="row col-mb-50 mb-0">
             <div class="col-lg-8">
                 <div class="heading-block fancy-title border-bottom-0 title-bottom-border">
-                    <h1>Misi Sekolah</h1>
+                    <h3>Misi Sekolah</h3>
                 </div>
-                    <h3><p>{!! $visi->misi !!}</p></h3>
+                    <h4><p>{!! $visi->misi !!}</p></h4>
                 </div>
         </div>
     </div>
