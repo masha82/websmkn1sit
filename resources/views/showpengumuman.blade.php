@@ -57,9 +57,9 @@
                                     <div class="col-md-8">
                                         <div class="entry-title title-xs">
                                             {{-- <div class="entry-categories"><a href="demo-blog-categories.html">Market</a></div> --}}
-                                            <h3><a href="{{route('infosekolah.show', $item->id)}}"
+                                            <h5><a href="{{route('infosekolah.show', $item->id)}}"
                                                    class="stretched-link color-underline">{{ $item->judul }}</a>
-                                            </h3>
+                                            </h5>
                                         </div>
                                         <div class="entry-meta">
                                             <ul>
