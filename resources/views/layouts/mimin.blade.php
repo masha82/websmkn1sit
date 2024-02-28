@@ -61,24 +61,72 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Berita</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-laptop me-2"></i>Home</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ route('berita.create') }}" class="dropdown-item">Tambah Berita</a>
-                            <a href="{{ route('berita.index')}}l" class="dropdown-item">Show Berita</a>
+                            <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
+                            <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Galeri</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="fa fa-laptop me-2"></i>Profil</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
                             <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
                             <a href="{{ route('berita.index')}}l" class="dropdown-item">Show</a>
                         </div>
                     </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-laptop me-2"></i>Data</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
+                                <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
+                                <a href="{{ route('berita.index')}}l" class="dropdown-item">Show</a>
+                            </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-laptop me-2"></i>Info</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
+                                <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
+                                <a href="{{ route('berita.index')}}l" class="dropdown-item">Show</a>
+                            </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-laptop me-2"></i>OSIS</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
+                                <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
+                                <a href="{{ route('berita.index')}}l" class="dropdown-item">Show</a>
+                            </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-laptop me-2"></i>Aplikasi</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
+                                <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
+                                <a href="{{ route('berita.index')}}l" class="dropdown-item">Show</a>
+                            </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-laptop me-2"></i>PPDB</a>
+                            <div class="dropdown-menu bg-transparent border-0">
+                                <a href="{{ route('gallery.create') }}" class="dropdown-item">Tambah Foto</a>
+                                <a href="{{ route('media.create') }}" class="dropdown-item">Tambah Video</a>
+                                <a href="{{ route('berita.index')}}l" class="dropdown-item">Show</a>
+                            </div>
+                    </div>
+                    {{-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> --}}
                 </div>
             </nav>
         </div>

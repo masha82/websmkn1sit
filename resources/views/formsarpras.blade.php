@@ -1,4 +1,4 @@
-@extends('layouts.master');
+@extends('layouts.mimin');
 @push('css')
     <link rel="stylesheet" href="{{ url('https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
