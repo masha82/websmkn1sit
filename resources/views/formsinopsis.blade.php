@@ -1,7 +1,8 @@
 @extends('layouts.mimin')
 @push('css')
-    <link rel="stylesheet" href="{{ url('https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css') }}">
+    <link href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endpush
 @section('title')
     <title>Form Sinopsis</title>
@@ -41,7 +42,7 @@
                             </div>
                             <div class="col-12 form-group">
                                 <label>Isi Sinopsis:</label>
-                                <textarea name="isi" id="isi" class="form-control summernote"></textarea>
+                                <textarea name="isi" id="isi" class="summernote"></textarea>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary" type="submit">Simpan</button>
@@ -73,8 +74,9 @@
     </section>
 @endsection
 @push('js')
-    <script src="{{ url('https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
     <script>
@@ -139,19 +141,23 @@
             $('body').on('click', '.hapus-data', function () {
                 del($(this).attr('data-id'));
             });
-            $('.summernote').summernote({
-                toolbar: [
-                    // [groupName, [list of button]]
-                    ['style', ['bold', 'italic', 'underline', 'clear']],
-                    ['font', ['strikethrough', 'superscript', 'subscript']],
-                    ['fontsize', ['fontsize']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['height', ['height']],
-                    ['link', ['link']]
-                ]
-            });
         });
     </script>
+    <script>
+        $(document).ready(function () {
+           $('.summernote').summernote({
+               toolbar: [
+                   // [groupName, [list of button]]
+                   ['style', ['bold', 'italic', 'underline', 'clear']],
+                   ['font', ['strikethrough', 'superscript', 'subscript']],
+                   ['fontsize', ['fontsize']],
+                   ['color', ['color']],
+                   ['para', ['ul', 'ol', 'paragraph']],
+                   ['height', ['height']],
+                   ['link', ['link']]
+               ]
+           });
+       });
+   </script>
 @endpush
 

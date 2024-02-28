@@ -1,8 +1,8 @@
 @extends('layouts.mimin')
 @push('css')
-    <link rel="stylesheet" href="{{ url('https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css') }}">
+    <link href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endpush
 @section('title')
     <title>Form Opini Sekolah</title>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-12 form-group">
                                 <label>Isi Opini:</label>
-                                <textarea class="summernote" name="isi"></textarea>
+                                <textarea class="summernote" name="isi" required></textarea>
                             </div>
                             <div class="col-12 form-group">
                                 <label for="sel1">Status Editor:</label>
@@ -84,27 +84,16 @@
     </section>
 @endsection
 @push('js')
-    <script src="{{ url('https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
-    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
     <script>
         $(document).ready(function () {
             $('#tgl_opini').datepicker({
                 uiLibrary: 'bootstrap4',
                 format: 'yyyy-mm-dd'
-            });
-            $('.summernote').summernote({
-                toolbar: [
-                    ['style', ['style']],
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']],
-                    ['table', ['table']],
-                    ['insert', ['link', 'picture', 'video']],
-                    ['view', ['fullscreen', 'codeview', 'help']]
-                    ]
             });
             var table = $('#myTable').DataTable({
                 processing: true,
@@ -174,7 +163,22 @@
             $('body').on('click', '.hapus-data', function () {
                 del($(this).attr('data-id'));
             });
-
         });
+    </script>
+    <script>
+            $(document).ready(function () {
+               $('.summernote').summernote({
+                   toolbar: [
+                       // [groupName, [list of button]]
+                       ['style', ['bold', 'italic', 'underline', 'clear']],
+                       ['font', ['strikethrough', 'superscript', 'subscript']],
+                       ['fontsize', ['fontsize']],
+                       ['color', ['color']],
+                       ['para', ['ul', 'ol', 'paragraph']],
+                       ['height', ['height']],
+                       ['link', ['link']]
+                   ]
+               });
+           });
     </script>
 @endpush

@@ -122,8 +122,8 @@
 											<li><a href="{{ url('kegosis') }}">Kegiatan OSIS</a></li>
 										</ul>
 									</li>
-									<li><a href="#">Aplikasi</a>
-                                    <ul class="sub-menu-container" style="">
+									<li class="dropdown"><a href="#">Aplikasi</a>
+                                    <ul>
                                         @php
                                             $links = App\Models\Aplikasi::all();
                                         @endphp
@@ -135,8 +135,8 @@
                                         </li>
                                         @endforeach
                                     </ul></li>
-									<li><a href="#">PPDB</a>
-                                    <ul class="sub-menu-container" style="">
+									<li class="dropdown"><a href="#">PPDB</a>
+                                    <ul>
                                         @php
                                             $links = App\Models\Ppdb::all();
                                         @endphp
