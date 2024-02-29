@@ -14,7 +14,9 @@ class GotakeuanganController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    protected $model = Gotakeuangan::class;  
+    use Table;
+
+     protected $model = Gotakeuangan::class;  
     protected $route = 'lapkeuangan'; 
     public function index()
     {

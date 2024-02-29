@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <title>Dashboard Admin SMKN 1 Situbondo</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -20,6 +19,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Date & Time Picker CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <!-- Libraries Stylesheet -->
     <link href="{{ asset('assets-mimin/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-mimin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
@@ -28,7 +30,9 @@
     <link href="{{ asset('assets-mimin/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{ asset('assets-mimin/css/style.css') }}" rel="stylesheet">    @stack('css')
+    <link href="{{ asset('assets-mimin/css/style.css') }}" rel="stylesheet">    
+    <link href="summernote-bs5.css" rel="stylesheet">
+    @stack('css')
 </head>
 
 <body>
@@ -88,8 +92,8 @@
                                 <a href="{{ route('sarana.create') }}" class="dropdown-item">Sarana Prasarana</a>
                                 <a href="{{ route('matapelajaran.create') }}" class="dropdown-item">Mata Pelajaran</a>
                                 <a href="{{ route('gurusekolah.create') }}" class="dropdown-item">Guru</a>
-                                <a href="{{ route('tenagapendidik.create')}}l" class="dropdown-item">Tenaga Pendidik</a>
-                                <a href="{{ route('siswasekolah.create')}}l" class="dropdown-item">Siswa</a>
+                                <a href="{{ route('tenagapendidik.create')}}" class="dropdown-item">Tenaga Pendidik</a>
+                                <a href="{{ route('siswasekolah.create')}}" class="dropdown-item">Siswa</a>
                             </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -134,11 +138,11 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fa fa-laptop me-2"></i>Literasi</a>
                             <div class="dropdown-menu bg-transparent border-0">
-                                <a href="{{ route('infosekolah.create') }}" class="dropdown-item">Buku Tamu</a>
-                                <a href="{{ route('agendasekolah.create') }}" class="dropdown-item">Daftar Buku</a>
-                                <a href="{{ route('jadwalmapel.create')}}" class="dropdown-item">Film</a>
-                                <a href="{{ route('jadwalexam.create')}}" class="dropdown-item">Sinopsis</a>
-                                <a href="{{ route('ekskul.create')}}" class="dropdown-item">Mading</a>
+                                <a href="{{ route('guestbook.create') }}" class="dropdown-item">Buku Tamu</a>
+                                <a href="{{ route('infobuku.create') }}" class="dropdown-item">Daftar Buku</a>
+                                <a href="{{ route('infofilm.create')}}" class="dropdown-item">Film</a>
+                                <a href="{{ route('infosinopsis.create')}}" class="dropdown-item">Sinopsis</a>
+                                <a href="{{ route('infomading.create')}}" class="dropdown-item">Mading</a>
                             </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -178,7 +182,7 @@
                             <span class="d-none d-lg-inline-flex">Admin SMK</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
+                            {{-- <a href="#" class="dropdown-item">My Profile</a> --}}
                             {{-- <a href="#" class="dropdown-item">Settings</a> --}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -280,7 +284,16 @@
     <!-- Template Javascript -->
     <script src="{{ asset('assets-mimin/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
     @stack('js')
+    @include('sweetalert::alert')
 </body>
 
 </html>

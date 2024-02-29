@@ -2,7 +2,6 @@
 @push('css')
     <link href="https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap5.css" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
-
 @endpush
 @section('title')
     <title>Form Kepala Sekolah</title>

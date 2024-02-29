@@ -14,6 +14,8 @@ class GotadonasiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     use Table;
     protected $model = Gotadonasi::class;  
     protected $route = 'donasi';
     public function index()
