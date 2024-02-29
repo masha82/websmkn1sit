@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Traits\Table;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Str;
 
 class BeritaController extends Controller
 {
@@ -31,7 +32,7 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        return view('formberita');
+        return view('formberitanew');
     }
 
     /**
@@ -42,12 +43,14 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
+        $slug = Str::slug($request->judul,'-');
         $data = $request->all();
         $file = $request->file('foto');
         $new_name = rand() . '.' . $file->getClientOriginalExtension();
         $file->move(public_path("gambar_berita"), $new_name);
         $data['foto'] = $new_name;
-        Berita::create($data);
+        $data['slug'] = $slug;
+        $data = Berita::create($data);
         return redirect()->back()->with(['success' => 'Data berhasil disimpan.']);
     }
 
@@ -59,9 +62,15 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        $data = Berita::findOrFail($id);
-        $berita = Berita::orderBy('created_at', 'DESC')->paginate(5);
-        return view('shownews', compact('data', 'berita'));
+        $berita =  Berita::all()->take(5);
+        $data = Berita::where('slug',$id)->first();
+        return view('shownews', compact('data','berita'));
+    }
+
+    public function tampilan($id)
+    {
+        $data = Berita::orderBy('created_at', 'DESC')->paginate(20);
+        return view('tampilberita', compact('data'));
     }
 
     /**
@@ -86,7 +95,6 @@ class BeritaController extends Controller
     public function update(Request $request, $id)
     {
         $data = $this->model::find($id);
-        $data->judul=$request->judul;
         $data->kategori=$request->kategori;
         $data->isi=$request->isi;
         $data->editor=$request->editor;
@@ -108,9 +116,9 @@ class BeritaController extends Controller
                 return $foto;
             })
             ->addColumn('action', function ($data) {
-                $del = '<a href="#" data-id="' . $data->id . '" class="btn btn-danger hapus-data">Hapus</a>';
+                // $del = '<a href="#" data-id="' . $data->id . '" class="btn btn-danger hapus-data">Hapus</a>';
                 $edit = '<a href="' . route($this->route . '.edit', $data->id) . '" class="btn btn-primary">Edit</a>';
-                return $edit . '&nbsp' . $del;
+                return $edit . '&nbsp';
             })
             ->rawColumns(['foto', 'action'])
             ->make(true);

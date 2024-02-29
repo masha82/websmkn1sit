@@ -5,7 +5,7 @@
 @section('content')
 <section id="page-title">
     <div class="container clearfix">
-        <h2>Berita SMKN 1 Situbondo</h2>
+        <h1>Berita Tentang SMKN 1 Sempol</h1>
     </div>
 </section>
         <div class="container clearfix">
@@ -16,14 +16,22 @@
                     @foreach ($data as $item)
                         <div class="entry col-12 mt-0 mb-0">
                             <div class="grid-inner row g-0">
-                                <div class="col-md-4">
-                                    <a class="entry-image" href="#" data-lightbox="image"><img
-                                            src="{{ asset('gambar_berita/' . $item->foto) }}"
-                                            alt="Standard Post with Image"></a>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="blog-posts single-post">
+                                            <article class="post post-large blog-single-post border-0 m-0 p-0">
+                                                <div class="post-image ms-0">
+                                                    <a href="blog-post.html">
+                                                        <img src="{{ asset('gambar_berita/' . $item->foto) }}" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+                                                    </a>
+                                                </div>            
+                                            </article>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8 ps-md-4">
                                     <div class="entry-title title-sm">
-                                        <h4><a href="{{route('berita.show',$item->id)}}">{{ $item->judul }}</a></h4>
+                                        <h2><a href="{{route('berita.show',$item->slug)}}">{{ $item->judul }}</a></h2>
                                     </div>
                                     <div class="entry-meta">
                                         <ul>
@@ -37,7 +45,7 @@
                                         </ul>
                                     </div>
                                     <div class="entry-content">
-                                        <a href="{{route('berita.show',$item->id)}}" class="button button-border button-rounded">Baca
+                                        <a href="{{route('berita.show',$item->slug)}}" class="button button-border button-rounded">Baca
                                             selengkapnya</a>
                                     </div>
                                 </div>
