@@ -338,12 +338,12 @@
 	<!-- End Steps Two --> --}}
 	
 	<!-- Services Four -->
-	{{-- <section class="services-four">
+	<section class="services-four">
 		<div class="auto-container">
 			<!-- Sec Title Three -->
 			<div class="sec-title_three centered">
-				<div class="sec-title_three-title">Our Feachered Services</div>
-				<h2 class="sec-title_three-heading">We provide some <span>exclusive</span> <br> services for clients</h2>
+				<div class="sec-title_three-title">GOTA</div>
+				<h3 class="sec-title_three-heading">Gerakan Orang Tua Asuh</h3>
 			</div>
 			<div class="inner-container">
 				<div class="row clearfix">
@@ -355,9 +355,9 @@
 								<span class="service-block_six-icon">
 									<img src="{{ asset('assets/images/icons/service-25.gif') }}" alt="" />
 								</span>
-								<h4 class="service-block_six-heading"><a href="#">UI/UX Design</a></h4>
-								<div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-								<a class="service-block_six-more theme-btn" href="#">Discover more</a>
+								<h4 class="service-block_six-heading"><a href="#">Kegiatan GOTA</a></h4>
+								{{-- <div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div> --}}
+								<a class="service-block_six-more theme-btn" href="{{ url('gotakeg') }}">Lihat Selengkapnya</a>
 							</div>
 						</div>
 					</div>
@@ -369,9 +369,9 @@
 								<span class="service-block_six-icon">
 									<img src="{{ asset('assets/images/icons/service-26.gif') }}" alt="" />
 								</span>
-								<h4 class="service-block_six-heading"><a href="#">SEO & Marketing</a></h4>
-								<div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-								<a class="service-block_six-more theme-btn" href="#">Discover more</a>
+								<h4 class="service-block_six-heading"><a href="#">Laporan Keuangan</a></h4>
+								{{-- <div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div> --}}
+								<a class="service-block_six-more theme-btn" href="{{ url('lapkeuangan') }}">Lihat Selengkapnya</a>
 							</div>
 						</div>
 					</div>
@@ -383,58 +383,15 @@
 								<span class="service-block_six-icon">
 									<img src="{{ asset('assets/images/icons/service-27.gif') }}" alt="" />
 								</span>
-								<h4 class="service-block_six-heading"><a href="#">Business Planning</a></h4>
-								<div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-								<a class="service-block_six-more theme-btn" href="#">Discover more</a>
+								<h4 class="service-block_six-heading"><a href="#">Donasi</a></h4>
+								{{-- <div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div> --}}
+								<a class="service-block_six-more theme-btn" href="{{ url('donasi') }}">Lihat Selengkapnya</a>
 							</div>
 						</div>
-					</div>
-					
-					<!-- Service Block Six -->
-					<div class="service-block_six col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_six-inner">
-							<div class="service-block_six-content">
-								<span class="service-block_six-icon">
-									<img src="{{ asset('assets/images/icons/service-28.gif') }}" alt="" />
-								</span>
-								<h4 class="service-block_six-heading"><a href="#">Web Development</a></h4>
-								<div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-								<a class="service-block_six-more theme-btn" href="#">Discover more</a>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Service Block Six -->
-					<div class="service-block_six col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_six-inner">
-							<div class="service-block_six-content">
-								<span class="service-block_six-icon">
-									<img src="{{ asset('assets/images/icons/service-29.gif') }}" alt="" />
-								</span>
-								<h4 class="service-block_six-heading"><a href="#">Cloud Services</a></h4>
-								<div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-								<a class="service-block_six-more theme-btn" href="#">Discover more</a>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Service Block Six -->
-					<div class="service-block_six col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_six-inner">
-							<div class="service-block_six-content">
-								<span class="service-block_six-icon">
-									<img src="{{ asset('assets/images/icons/service-30.gif') }}" alt="" />
-								</span>
-								<h4 class="service-block_six-heading"><a href="#">Hosting Services</a></h4>
-								<div class="service-block_six-text">Lorem ipsum dolor sit amet, con sectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
-								<a class="service-block_six-more theme-btn" href="#">Discover more</a>
-							</div>
-						</div>
-					</div>
-					
+					</div>					
 				</div>
 				
-				<!-- Button Box -->
+				{{-- <!-- Button Box -->
 				<div class="services-four_button-box text-center">
 					<a class="btn-style-seven theme-btn" href="#">
 						<div class="btn-wrap">
@@ -442,11 +399,11 @@
 							<span class="text-two">get started</span>
 						</div>
 					</a>
-				</div>
+				</div> --}}
 				
 			</div>
 		</div>
-	</section> --}}
+	</section>
 	<!-- End Services Four -->
 	
 	<!-- Contact One -->

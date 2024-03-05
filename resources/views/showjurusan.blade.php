@@ -40,7 +40,7 @@
                     <!-- Sidebar Widget 1
                 ============================================= -->
                     <div class="widget clearfix">
-                        <h3 class="font-secondary fw-medium h4">Kompetensi/Jurusan</h3>
+                        <h5 class="font-secondary fw-medium h4">Kompetensi/Jurusan</h5>
                         <div class="row posts-md col-mb-30">
                             @foreach ($jurusan as $item)
                                 <article class="entry col-12">
@@ -53,9 +53,9 @@
                                         <div class="col-md-8">
                                             <div class="entry-title title-xs">
                                                 {{-- <div class="entry-categories"><a href="demo-blog-categories.html">Market</a></div> --}}
-                                                <h3><a href="{{route('jurusan.show', $item->id)}}"
+                                                <h6><a href="{{route('jurusan.show', $item->id)}}"
                                                        class="stretched-link color-underline">{{ $item->nama_keahlian }}</a>
-                                                </h3>
+                                                </h6>
                                             </div>
                                             <div class="entry-meta">
                                                 <ul>

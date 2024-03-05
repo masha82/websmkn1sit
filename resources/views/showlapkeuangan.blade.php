@@ -12,7 +12,7 @@
 
 
             <div class="entry clearfix">
-                <h2 class="mb-3 fw-bold h1"> {{$data->nama_keuangan}}</h2>
+                <h3 class="mb-3 fw-bold h1"> {{$data->nama_keuangan}}</h3>
                 <div class="entry-meta d-flex justify-content-between mb-4">
                     <ul>
                         <li><i class="icon-time"></i><a
@@ -44,7 +44,7 @@
                 <!-- Sidebar Widget 1
             ============================================= -->
                 <div class="widget clearfix">
-                    <h3 class="font-secondary fw-medium h4">Laporan Terbaru</h3>
+                    <h5 class="font-secondary fw-medium h4">Laporan Terbaru</h5>
                     <div class="row posts-md col-mb-30">
                         @foreach ($laporanku as $item)
                             <article class="entry col-12">
@@ -57,9 +57,9 @@
                                     <div class="col-md-8">
                                         <div class="entry-title title-xs">
                                             {{-- <div class="entry-categories"><a href="demo-blog-categories.html">Market</a></div> --}}
-                                            <h3><a href="{{route('lapkeuangan.show', $item->id)}}"
+                                            <h6><a href="{{route('lapkeuangan.show', $item->id)}}"
                                                    class="stretched-link color-underline">{{ $item->nama_keuangan }}</a>
-                                            </h3>
+                                            </h6>
                                         </div>
                                         <div class="entry-meta">
                                             <ul>

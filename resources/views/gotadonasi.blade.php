@@ -5,7 +5,7 @@
 @section('content')
     <section id="page-title">
         <div class="container clearfix">
-            <h1>DONASI GOTA SMKN 1 Situbondo</h1>
+            <br><h2>DONASI GOTA SMKN 1 Situbondo</h1><br><br>
         </div>
     </section>
     <div class="container clearfix">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-8 ps-md-4">
                                 <div class="entry-title title-sm">
-                                    <h2><a href="{{route('donasi.show',$item->id)}}">{{ $item->nama_donasi }}</a></h2>
+                                    <h4><a href="{{route('donasi.show',$item->id)}}">{{ $item->nama_donasi }}</a></h4>
                                 </div>
                                 <div class="entry-meta">
                                     <ul>

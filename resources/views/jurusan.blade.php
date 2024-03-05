@@ -19,8 +19,10 @@
 
 @section('content')
 <section id="page-title">
+    <div>
+    </div>
     <div class="container clearfix">
-        <h2>Kompetensi Keahlian/Jurusan di SMKN 1 Situbondo</h2>
+        <br><h2>Kompetensi Keahlian/Jurusan di SMKN 1 Situbondo</h2><br>
     </div>
 </section>
         <div class="container clearfix">
@@ -54,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="portfolio-desc">
-                                <h3><a href={{route('jurusan.show',$item->id)}}> {!! $item->nama_keahlian !!} </a></h3>
+                                <h4><a href={{route('jurusan.show',$item->id)}}> {!! $item->nama_keahlian !!} </a></h4>
                             </div>
                         </div>
                     @endforeach
